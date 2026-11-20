@@ -1,0 +1,30 @@
+name: build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  firmware:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        env: [d1_mini, nodemcuv2]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.platformio
+          key: pio-${{ hashFiles('platformio.ini') }}
+      - name: Install PlatformIO
+        run: pip install platformio
+      - name: Build
+        run: pio run -e ${{ matrix.env }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lightlink-${{ matrix.env }}
+          path: .pio/build/${{ matrix.env }}/firmware.bin

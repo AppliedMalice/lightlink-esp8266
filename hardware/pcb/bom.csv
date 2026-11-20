@@ -1,0 +1,13 @@
+Ref,Qty,Value,Description,Footprint,Notes
+U1 U2,2,74HCT245,Octal bus transceiver DIP-20 (must be HCT/AHCT/ACT),DIP-20 0.3in,Notch toward the top edge (pin 1 = square pad)
+(sockets),2,DIP-20 socket,IC socket DIP-20 0.3in,DIP-20,Recommended
+J1 J2,2,2x5 box header,Shrouded IDC header 2.54mm straight,IDC-Header_2x05_P2.54mm_Vertical,Takes the original LightLink ribbons; notch faces the board centre
+J3,1,2-pos 5.08mm,PCB screw terminal 5.08mm pitch (KF301 / MKDS style),TerminalBlock 1x02 P5.08mm,Wire entry faces the bottom edge; left = +5V
+JP1,1,1x2 header + shunt,2.54mm pin header with jumper,PinHeader_1x02_P2.54mm,VIN link
+R1 R2 R3 R4,4,33R,Resistor 1/4 W axial (22-100R works),Axial 10.16mm,Series damping SRCK/RCK
+R5,1,1k,Resistor 1/4 W axial,Axial 10.16mm,LED current
+C1 C2,2,100nF,Ceramic capacitor (code 104) 5.0/5.08mm lead pitch,C_Disc P5.00mm,Decoupling at each 74HCT245
+C3,1,100uF 10V+,Electrolytic radial 2.5mm pitch <=6.3mm dia,CP_Radial_D6.3mm_P2.50mm,Square pad = +
+D1,1,LED 3mm,Any colour,LED_D3.0mm,Square pad = cathode (flat side / short leg)
+MCU,1,NodeMCU v2 or v3,ESP8266 NodeMCU with pins,Dual 1x15 rows,v2 inner rows / v3 outer rows; antenna toward the top edge
+H1-H4,4,M3,Mounting holes 3.2mm (optional standoffs),MountingHole_3.2mm_M3,

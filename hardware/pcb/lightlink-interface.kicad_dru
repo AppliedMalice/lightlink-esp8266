@@ -1,0 +1,3 @@
+(version 1)
+(rule "single spoke thermals are fine on this board"
+  (constraint min_resolved_spokes 1))
